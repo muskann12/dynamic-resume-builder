@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Resume Builder</title>
+</head>
+<body>
+    <div class="navbar">
+        DYNAMIC RESUME BUILDER
+        <p class="navbar">Resume maker that can help you land your dream job! Make your resume fast and easily</p>
+    </div>
+
+    <div class="container">
+        <div id="welcomePage">
+            <h1>Welcome! Let's Create Your Resume</h1>
+            <button id="createResumeBtn" class="primary-btn">Create Resume</button>
+        </div>
+
+        <form id="resumeForm" class="hidden">
+            <div class="form-step">
+                <h2>Contact Information</h2>
+                <label for="firstName">Full Name:</label>
+                <input type="text" id="firstName" name="firstName" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+
+                <fieldset>
+                    <legend>Address</legend>
+                    <label for="address">Enter your address:</label><br>
+                    <textarea id="address" name="address" rows="4" cols="50" required></textarea><br>
+                </fieldset>
+
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <div class="form-step hidden">
+                <h2>Education</h2>
+                <label for="schoolName">School Name:</label>
+                <input type="text" id="schoolName" name="schoolName" required><br><br>
+
+                <label for="schoolLocation">School Location:</label>
+                <input type="text" id="schoolLocation" name="schoolLocation" required><br><br>
+
+                <label for="degree">Degree:</label>
+                <input type="text" id="degree" name="degree" required><br><br>
+
+                <label for="graduationYear">Graduation Year:</label>
+                <input type="number" id="graduationYear" name="graduationYear" required><br><br>
+
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <div class="form-step hidden">
+                <h2>Experience</h2>
+                <label for="jobTitle">Job Title:</label>
+                <input type="text" id="jobTitle" name="jobTitle" required><br><br>
+
+                <label for="companyName">Company Name:</label>
+                <input type="text" id="companyName" name="companyName" required><br><br>
+
+                <label for="jobDescription">Job Description:</label>
+                <textarea id="jobDescription" name="jobDescription" rows="4" required></textarea><br><br>
+
+                <label for="yearsWorked">Years Worked:</label>
+                <input type="text" id="yearsWorked" name="yearsWorked" required><br><br>
+
+                <button type="button" class="back-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+
+            <div class="form-step hidden">
+                <h2>YAY! You are almost there completing your CV</h2>
+                <h3>Skills</h3>
+                <textarea name="skills" id="skills" rows="4" required></textarea><br><br>
+
+                <label for="profilePic">Choose a profile picture:</label>
+                <input type="file" id="profilePic" name="profilePic" accept="image/*"><br><br>
+
+                <button type="button" class="back-btn">Back</button>
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+        </form>
+
+        <div id="cvOutput" class="hidden">
+            <h2>Your CV</h2>
+            <div id="cvContent" class="cv-content"></div>
+            <div class="cv-buttons">
+                <button id="downloadCv" class="hidden">Download CV</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Resume Builder By Muskan Nisar.</p>
+        </div>
+    </footer>
+
+    <script src="index.js" defer></script>
+</body>
+</html>

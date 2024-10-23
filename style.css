@@ -1,0 +1,278 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, rgb(15, 127, 165), rgb(255, 255, 255));
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #569cb4;
+    padding: 10px;
+    color: rgb(237, 236, 236);
+    text-align: center;
+    text-align: center;
+    margin-right: auto;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 
+        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 50px; 
+    width: 90%; 
+    margin: 10px auto; 
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Footer */
+.footer {
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 16px; 
+}
+
+/* Centered Container */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    margin: auto;
+    max-width: 600px;
+    width: 80%;
+    padding: 20px; 
+    text-shadow: #012836;
+
+    
+}
+
+/* Form and Welcome Page */
+#welcomePage, .form-step {
+    background-color: white;
+    padding: 50px; 
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin:  auto; 
+}
+
+
+
+/* Buttons */
+.primary-btn, .next-btn, .back-btn, .submit-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.primary-btn, .next-btn, .submit-btn {
+    background-color: #569cb4;
+    color: white;
+}
+
+.primary-btn:hover, .next-btn:hover, .submit-btn:hover {
+    background-color: #012836;
+    transform: scale(1.05); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.back-btn {
+    background-color: #005974;
+    color: white;
+}
+
+.back-btn:hover {
+    background-color: #33cacd; 
+    transform: scale(1.05); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+    .container {
+        padding: 10px;   
+        margin-left: 20; 
+    }
+}
+
+/* Hidden Elements */
+.hidden {
+    display: none;
+}
+
+/* Input and Textarea Styles */
+input, textarea {
+    width: calc(100% - 2px);
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #ffffff; 
+}
+/* CV Output Styles */
+#cvOutput {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content Area */
+.cv-content {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff; 
+}
+
+/* Header Section */
+.cv-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 15px;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px; 
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover; 
+    width: 80px;
+    height: 80px; 
+    margin-bottom: 10px;
+}
+
+/* Heading Styles */
+.cv-header h3 {
+    margin: 0; 
+    font-size: 24px; 
+    color: #007BFF;
+}
+
+.cv-header p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Section Styles */
+.cv-section {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    background-color: #f1f1f1;
+}
+
+.cv-section h3 {
+    margin-bottom: 10px; 
+    color: #333; 
+    position: relative;
+}
+
+
+.cv-section h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px; 
+    background-color: #007BFF; 
+    position: absolute;
+    bottom: -5px; 
+    left: 0;
+}
+
+/* cv Styles */
+.cv-info {
+    display: flex;
+    flex-direction: column; 
+    gap: 5px; 
+}
+
+/* Skills Section */
+.skills .skill {
+    margin-bottom: 25px; 
+}
+
+.skill-progress {
+    height: 10px;
+    background-color: #ddd; 
+    border-radius: 5px; 
+    overflow: hidden; 
+    width: 100%;
+}
+
+.skill-progress-inner {
+    height: 100%; 
+    background-color: #21daff;
+    width: 0; 
+    transition: width 1s ease-in-out; 
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #cvOutput {
+        padding: 15px;
+    }
+
+    .cv-header {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .profile-pic {
+        width: 80px; 
+        height: 80px; 
+        margin-bottom: 10px;
+    }
+
+    .cv-header h3 {
+        font-size: 20px; 
+    }
+
+    .cv-header p {
+        font-size: 14px; 
+    }
+
+    .cv-section {
+        padding: 8px;
+    }
+
+    .cv-section h3 {
+        font-size: 18px; 
+    }
+}
+
+@media (max-width: 350px) {
+    .cv-header h3 {
+        font-size: 18px;
+    }
+
+    .cv-header p {
+        font-size: 12px;
+    }
+
+    .skills .skill {
+        margin-bottom: 15px; 
+    }
+}

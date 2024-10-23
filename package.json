@@ -1,0 +1,22 @@
+{
+
+  
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "dependencies": {
+    "html2canvas": "^1.4.1",
+    "html2pdf.js": "^0.10.2"
+  }
+}
