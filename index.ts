@@ -1,4 +1,4 @@
-// index.ts
+
 
 // Select elements
 const createResumeBtn = document.getElementById('createResumeBtn') as HTMLButtonElement;
@@ -31,7 +31,7 @@ nextBtns.forEach((btn) => {
     });
 });
 
-// Show previous form step
+
 backBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
         if (currentStep > 0) {
@@ -42,7 +42,7 @@ backBtns.forEach((btn) => {
     });
 });
 
-// Generate CV on form submission
+// Generate CV 
 submitBtn.addEventListener('click', (event: Event) => {
     event.preventDefault(); // Prevent default form submission
 
@@ -63,7 +63,7 @@ submitBtn.addEventListener('click', (event: Event) => {
     const jobDescription = (document.getElementById('jobDescription') as HTMLTextAreaElement).value;
     const yearsWorked = (document.getElementById('yearsWorked') as HTMLInputElement).value;
 
-    // Handle the profile picture
+    // profile picture
     const profilePicInput = document.getElementById('profilePic') as HTMLInputElement;
     let profilePicSrc: string | null = null;
 
@@ -82,7 +82,7 @@ submitBtn.addEventListener('click', (event: Event) => {
         outputCV(); // Call outputCV even if no image is selected
     }
 
-    // Function to output the CV content
+    
     function outputCV() {
         // Output CV content
         cvContent.innerHTML = `
@@ -109,13 +109,13 @@ submitBtn.addEventListener('click', (event: Event) => {
             </div>
         `;
 
-        // Show CV output and the download button
+      
         cvOutput.classList.remove('hidden');
         downloadCvButton.classList.remove('hidden'); // Show the download button
     }
 });
 
-// Download CV functionality
+// Download CV 
 declare var html2pdf: any;
 
 downloadCvButton.addEventListener('click', () => {
