@@ -90,8 +90,32 @@
         </form>
 
         <div id="cvOutput" class="hidden">
-            <h2>Your CV</h2>
-            <div id="cvContent" class="cv-content"></div>
+            <h2> Resume </h2>
+            <div id="cvContent" class="cv-content">
+                <!-- Dynamic CV Content Will Be Injected Here -->
+                <div class="cv-header">
+                    <img src="#" alt="Profile Picture" class="profile-pic" id="outputProfilePic"> <br> 
+                    <div class="cv-info"> 
+                        <h3 id="outputName"></h3> 
+                        <div class="contact-info">
+                            <p id="outputEmail"></p> 
+                            <p id="outputPhone"></p> 
+                        </div>
+                    </div>
+                </div>
+                <div class="cv-section">
+                    <h3>Education</h3>
+                    <p id="outputEducation"></p>
+                </div>
+                <div class="cv-section">
+                    <h3>Experience</h3>
+                    <p id="outputExperience"></p>
+                </div>
+                <div class="cv-section">
+                    <h3>Skills</h3>
+                    <p id="outputSkills"></p>
+                </div>
+            </div>
             <div class="cv-buttons">
                 <button id="downloadCv" class="hidden">Download CV</button>
             </div>

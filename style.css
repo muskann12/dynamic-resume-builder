@@ -14,11 +14,7 @@ body {
     padding: 10px;
     color: rgb(237, 236, 236);
     text-align: center;
-    text-align: center;
-    margin-right: auto;
     font-size: 20px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 
-        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border-radius: 50px; 
     width: 90%; 
     margin: 10px auto; 
@@ -47,12 +43,9 @@ body {
     justify-content: center; 
     align-items: center; 
     margin: auto;
-    max-width: 600px;
-    width: 80%;
+    max-width: 600px; /* Max width for container */
+    width: 80%; /* Width for smaller screens */
     padding: 20px; 
-    text-shadow: #012836;
-
-    
 }
 
 /* Form and Welcome Page */
@@ -62,10 +55,8 @@ body {
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 60%;
-    margin:  auto; 
+    margin: auto; 
 }
-
-
 
 /* Buttons */
 .primary-btn, .next-btn, .back-btn, .submit-btn {
@@ -101,14 +92,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
-/* Responsive Design */
-@media (max-width: 700px) {
-    .container {
-        padding: 10px;   
-        margin-left: 20; 
-    }
-}
-
 /* Hidden Elements */
 .hidden {
     display: none;
@@ -124,9 +107,10 @@ input, textarea {
     box-sizing: border-box;
     background-color: #ffffff; 
 }
+
 /* CV Output Styles */
 #cvOutput {
-    max-width: 800px;
+    max-width: 800px; /* Max width for CV Output */
     margin: 20px auto;
     padding: 15px;
     border: 1px solid #ccc;
@@ -135,43 +119,39 @@ input, textarea {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Main Content Area */
-.cv-content {
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #ffffff; 
-}
-
 /* Header Section */
 .cv-header {
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Align header vertically */
+    align-items: flex-start; /* Align items to the left */
     margin-bottom: 20px;
     border-bottom: 2px solid #007BFF;
     padding-bottom: 15px;
 }
 
 .profile-pic {
-    width: 100px;
+    width: 100px; /* Adjusted size for better fit */
     height: 100px; 
     border-radius: 50%;
-    margin-right: 20px;
-    object-fit: cover; 
-    width: 80px;
-    height: 80px; 
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Space between image and name */
+    object-fit: cover; /* Maintain aspect ratio */
 }
 
-/* Heading Styles */
+/* Contact Info */
+.contact-info {
+    margin-top: 10px; 
+}
+
+.contact-info p {
+    margin: 5px 0; /* Space between contact info lines */
+    color: #555; 
+}
+
+/* CV Info */
 .cv-header h3 {
     margin: 0; 
     font-size: 24px; 
     color: #007BFF;
-}
-
-.cv-header p {
-    margin: 5px 0;
-    color: #555;
 }
 
 /* Section Styles */
@@ -189,7 +169,6 @@ input, textarea {
     position: relative;
 }
 
-
 .cv-section h3::after {
     content: "";
     display: block;
@@ -201,42 +180,40 @@ input, textarea {
     left: 0;
 }
 
-/* cv Styles */
-.cv-info {
-    display: flex;
-    flex-direction: column; 
-    gap: 5px; 
+/* Responsive Design for larger screens */
+@media (min-width: 1024px) {
+    .cv-header h3 {
+        font-size: 32px; /* Maintain size for larger screens */
+    }
+
+    .contact-info p {
+        font-size: 16px; /* Maintain font size for contact info */
+    }
+
+    .cv-section {
+        margin-bottom: 25px; /* Maintain margin for larger screens */
+        padding: 15px; /* Maintain padding for larger screens */
+    }
+
+    .cv-section h3 {
+        font-size: 22px; /* Maintain font size for section headings */
+    }
 }
 
-/* Skills Section */
-.skills .skill {
-    margin-bottom: 25px; 
-}
+/* Responsive Design for smaller screens */
+@media (max-width: 700px) {
+    .container {
+        padding: 10px;   
+        margin-left: 20px; 
+    }
 
-.skill-progress {
-    height: 10px;
-    background-color: #ddd; 
-    border-radius: 5px; 
-    overflow: hidden; 
-    width: 100%;
-}
-
-.skill-progress-inner {
-    height: 100%; 
-    background-color: #21daff;
-    width: 0; 
-    transition: width 1s ease-in-out; 
-}
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
+    /* CV Output Styles */
     #cvOutput {
         padding: 15px;
+        width: 100%; /* Full width on mobile */
     }
 
     .cv-header {
-        flex-direction: column; 
         align-items: flex-start; 
     }
 
@@ -250,12 +227,13 @@ input, textarea {
         font-size: 20px; 
     }
 
-    .cv-header p {
-        font-size: 14px; 
+    .contact-info p {
+        font-size: 14px; /* Maintain font size for smaller screens */
     }
 
     .cv-section {
         padding: 8px;
+        margin-bottom: 10px; /* Space between sections */
     }
 
     .cv-section h3 {
@@ -268,11 +246,7 @@ input, textarea {
         font-size: 18px;
     }
 
-    .cv-header p {
-        font-size: 12px;
-    }
-
-    .skills .skill {
-        margin-bottom: 15px; 
+    .contact-info p {
+        font-size: 12px; /* Smaller font size for very small screens */
     }
 }

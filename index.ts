@@ -88,10 +88,10 @@ submitBtn.addEventListener('click', (event: Event) => {
         cvContent.innerHTML = `
             <div class="cv-header">
                 ${profilePicSrc ? `<img src="${profilePicSrc}" alt="Profile Picture" class="profile-pic">` : ''}
-                <h1>${firstName}</h1>
-                <p>Email: ${email}</p>
-                <p>Phone: ${phone}</p>
-                <p>Address: ${address}</p>
+                <h1>${firstName}</h1> 
+                  <p>Email: ${email}</p> 
+                <p>Phone: ${phone}</p> 
+                <p>Address: ${address}</p> 
             </div>
             <div class="cv-education">
                 <h2>Education</h2>
