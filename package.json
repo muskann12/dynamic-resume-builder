@@ -1,22 +1,16 @@
 {
-
-  
-  "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "include": [
-    "**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
   "dependencies": {
     "html2canvas": "^1.4.1",
-    "html2pdf.js": "^0.10.2"
+    "html2pdf.js": "^0.10.2",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
   }
 }

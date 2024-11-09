@@ -1,5 +1,3 @@
-
-
 // Select elements
 const createResumeBtn = document.getElementById('createResumeBtn') as HTMLButtonElement;
 const resumeForm = document.getElementById('resumeForm') as HTMLFormElement;
@@ -31,7 +29,7 @@ nextBtns.forEach((btn) => {
     });
 });
 
-
+// Show previous form step
 backBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
         if (currentStep > 0) {
@@ -50,6 +48,7 @@ submitBtn.addEventListener('click', (event: Event) => {
     const firstName = (document.getElementById('firstName') as HTMLInputElement).value;
     const email = (document.getElementById('email') as HTMLInputElement).value;
     const phone = (document.getElementById('phone') as HTMLInputElement).value;
+    const dob = (document.getElementById('dob') as HTMLInputElement).value; // Collect Date of Birth
     const address = (document.getElementById('address') as HTMLTextAreaElement).value;
     const schoolName = (document.getElementById('schoolName') as HTMLInputElement).value;
     const schoolLocation = (document.getElementById('schoolLocation') as HTMLInputElement).value;
@@ -63,7 +62,7 @@ submitBtn.addEventListener('click', (event: Event) => {
     const jobDescription = (document.getElementById('jobDescription') as HTMLTextAreaElement).value;
     const yearsWorked = (document.getElementById('yearsWorked') as HTMLInputElement).value;
 
-    // profile picture
+    // Profile picture
     const profilePicInput = document.getElementById('profilePic') as HTMLInputElement;
     let profilePicSrc: string | null = null;
 
@@ -82,34 +81,37 @@ submitBtn.addEventListener('click', (event: Event) => {
         outputCV(); // Call outputCV even if no image is selected
     }
 
-    
     function outputCV() {
-        // Output CV content
+        // Output CV content with updated layout
         cvContent.innerHTML = `
-            <div class="cv-header">
-                ${profilePicSrc ? `<img src="${profilePicSrc}" alt="Profile Picture" class="profile-pic">` : ''}
-                <h1>${firstName}</h1> 
-                  <p>Email: ${email}</p> 
-                <p>Phone: ${phone}</p> 
-                <p>Address: ${address}</p> 
-            </div>
-            <div class="cv-education">
-                <h2>Education</h2>
-                <p>${degree} from ${schoolName}, ${schoolLocation} (${graduationYear})</p>
-            </div>
-            <div class="cv-experience">
-                <h2>Experience</h2>
-                <p>${jobTitle} at ${companyName}</p>
-                <p>${jobDescription}</p>
-                <p>Years Worked: ${yearsWorked}</p>
-            </div>
-            <div class="cv-skills">
-                <h2>Skills</h2>
-                <p>${skills}</p>
+            <div class="cv-container">
+                <div class="cv-info">
+                    ${profilePicSrc ? `<img src="${profilePicSrc}" alt="Profile Picture" class="profile-pic">` : ''}
+                    <h1>${firstName}</h1> 
+                    <p>Email: ${email}</p> 
+                    <p>Phone: ${phone}</p> 
+                    <p>Date of Birth: ${dob}</p>
+                    <p>Address: ${address}</p> 
+                </div>
+                <div class="cv-details">
+                    <div class="cv-education">
+                        <h2>Education</h2>
+                        <p>${degree} from ${schoolName}, ${schoolLocation} (${graduationYear})</p>
+                    </div>
+                    <div class="cv-experience">
+                        <h2>Experience</h2>
+                        <p>${jobTitle} at ${companyName}</p>
+                        <p>${jobDescription}</p>
+                        <p>Years Worked: ${yearsWorked}</p>
+                    </div>
+                    <div class="cv-skills">
+                        <h2>Skills</h2>
+                        <p>${skills}</p>
+                    </div>
+                </div>
             </div>
         `;
 
-      
         cvOutput.classList.remove('hidden');
         downloadCvButton.classList.remove('hidden'); // Show the download button
     }

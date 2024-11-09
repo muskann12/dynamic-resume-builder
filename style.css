@@ -106,147 +106,80 @@ input, textarea {
     border-radius: 4px;
     box-sizing: border-box;
     background-color: #ffffff; 
+}body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f7f9;
 }
 
-/* CV Output Styles */
-#cvOutput {
-    max-width: 800px; /* Max width for CV Output */
-    margin: 20px auto;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Header Section */
-.cv-header {
+.cv-container {
     display: flex;
-    flex-direction: column; /* Align header vertically */
-    align-items: flex-start; /* Align items to the left */
-    margin-bottom: 20px;
-    border-bottom: 2px solid #007BFF;
-    padding-bottom: 15px;
+    gap: 20px;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    overflow: auto;
+}
+
+.cv-left {
+    flex: 1;
+    background-color: #1a73e8;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .profile-pic {
-    width: 100px; /* Adjusted size for better fit */
-    height: 100px; 
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    margin-bottom: 10px; /* Space between image and name */
-    object-fit: cover; /* Maintain aspect ratio */
-}
-
-/* Contact Info */
-.contact-info {
-    margin-top: 10px; 
-}
-
-.contact-info p {
-    margin: 5px 0; /* Space between contact info lines */
-    color: #555; 
-}
-
-/* CV Info */
-.cv-header h3 {
-    margin: 0; 
-    font-size: 24px; 
-    color: #007BFF;
-}
-
-/* Section Styles */
-.cv-section {
+    border: 4px solid #fff;
     margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px; 
-    background-color: #f1f1f1;
+    border: solid;
+    border-color:#012836;
+}
+
+.cv-right {
+    flex: 2;
+    padding: 20px;
+    background-color: #33cacd;
+}
+
+.cv-section {
+    margin-bottom: 20px;
+    background-color: #33cacd;
 }
 
 .cv-section h3 {
-    margin-bottom: 10px; 
-    color: #333; 
-    position: relative;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #1a73e8;
+    border-bottom: 2px solid #e0e0e0;
 }
 
-.cv-section h3::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 2px; 
-    background-color: #007BFF; 
-    position: absolute;
-    bottom: -5px; 
-    left: 0;
+.cv-section p {
+    margin: 5px 0;
 }
 
-/* Responsive Design for larger screens */
-@media (min-width: 1024px) {
-    .cv-header h3 {
-        font-size: 32px; /* Maintain size for larger screens */
-    }
-
-    .contact-info p {
-        font-size: 16px; /* Maintain font size for contact info */
-    }
-
-    .cv-section {
-        margin-bottom: 25px; /* Maintain margin for larger screens */
-        padding: 15px; /* Maintain padding for larger screens */
-    }
-
-    .cv-section h3 {
-        font-size: 22px; /* Maintain font size for section headings */
-    }
+.cv-section div {
+    margin-top: 10px;
 }
 
-/* Responsive Design for smaller screens */
-@media (max-width: 700px) {
-    .container {
-        padding: 10px;   
-        margin-left: 20px; 
-    }
-
-    /* CV Output Styles */
-    #cvOutput {
-        padding: 15px;
-        width: 100%; /* Full width on mobile */
-    }
-
-    .cv-header {
-        align-items: flex-start; 
-    }
-
-    .profile-pic {
-        width: 80px; 
-        height: 80px; 
-        margin-bottom: 10px;
-    }
-
-    .cv-header h3 {
-        font-size: 20px; 
-    }
-
-    .contact-info p {
-        font-size: 14px; /* Maintain font size for smaller screens */
-    }
-
-    .cv-section {
-        padding: 8px;
-        margin-bottom: 10px; /* Space between sections */
-    }
-
-    .cv-section h3 {
-        font-size: 18px; 
-    }
+.experience-item, .education-item {
+    padding: 10px;
+    border-left: 3px solid #569cb4;
+    margin-bottom: 10px;
 }
 
-@media (max-width: 350px) {
-    .cv-header h3 {
-        font-size: 18px;
-    }
+.experience-item h4, .education-item h4 {
+    font-size: 1.2rem;
+    color: #333;
+}
 
-    .contact-info p {
-        font-size: 12px; /* Smaller font size for very small screens */
-    }
+.experience-item p, .education-item p {
+    font-size: 1rem;
+    color: #666;
 }

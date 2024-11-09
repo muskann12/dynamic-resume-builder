@@ -1,4 +1,3 @@
-// index.ts
 // Select elements
 var createResumeBtn = document.getElementById('createResumeBtn');
 var resumeForm = document.getElementById('resumeForm');
@@ -37,13 +36,14 @@ backBtns.forEach(function (btn) {
         }
     });
 });
-// Generate CV on form submission
+// Generate CV 
 submitBtn.addEventListener('click', function (event) {
     event.preventDefault(); // Prevent default form submission
     // Collect form data
     var firstName = document.getElementById('firstName').value;
     var email = document.getElementById('email').value;
     var phone = document.getElementById('phone').value;
+    var dob = document.getElementById('dob').value; // Collect Date of Birth
     var address = document.getElementById('address').value;
     var schoolName = document.getElementById('schoolName').value;
     var schoolLocation = document.getElementById('schoolLocation').value;
@@ -55,7 +55,7 @@ submitBtn.addEventListener('click', function (event) {
     var companyName = document.getElementById('companyName').value;
     var jobDescription = document.getElementById('jobDescription').value;
     var yearsWorked = document.getElementById('yearsWorked').value;
-    // Handle the profile picture
+    // Profile picture
     var profilePicInput = document.getElementById('profilePic');
     var profilePicSrc = null;
     if (profilePicInput.files && profilePicInput.files[0]) {
@@ -72,11 +72,9 @@ submitBtn.addEventListener('click', function (event) {
     else {
         outputCV(); // Call outputCV even if no image is selected
     }
-    // Function to output the CV content
     function outputCV() {
-        // Output CV content
-        cvContent.innerHTML = "\n            <div class=\"cv-header\">\n                ".concat(profilePicSrc ? "<img src=\"".concat(profilePicSrc, "\" alt=\"Profile Picture\" class=\"profile-pic\">") : '', "\n                <h1>").concat(firstName, "</h1> <br> <br>\n                 <br> <p>Email: ").concat(email, "</p> <br> <br>\n                <p>Phone: ").concat(phone, "</p> <br> <br> \n                <p>Address: ").concat(address, "</p> <br>\n            </div>\n            <div class=\"cv-education\">\n                <h2>Education</h2>\n                <p>").concat(degree, " from ").concat(schoolName, ", ").concat(schoolLocation, " (").concat(graduationYear, ")</p>\n            </div>\n            <div class=\"cv-experience\">\n                <h2>Experience</h2>\n                <p>").concat(jobTitle, " at ").concat(companyName, "</p>\n                <p>").concat(jobDescription, "</p>\n                <p>Years Worked: ").concat(yearsWorked, "</p>\n            </div>\n            <div class=\"cv-skills\">\n                <h2>Skills</h2>\n                <p>").concat(skills, "</p>\n            </div>\n        ");
-        // Show CV output and the download button
+        // Output CV content with updated layout
+        cvContent.innerHTML = "\n            <div class=\"cv-container\">\n                <div class=\"cv-info\">\n                    ".concat(profilePicSrc ? "<img src=\"".concat(profilePicSrc, "\" alt=\"Profile Picture\" class=\"profile-pic\">") : '', "\n                    <h1>").concat(firstName, "</h1> \n                    <p>Email: ").concat(email, "</p> \n                    <p>Phone: ").concat(phone, "</p> \n                    <p>Date of Birth: ").concat(dob, "</p>\n                    <p>Address: ").concat(address, "</p> \n                </div>\n                <div class=\"cv-details\">\n                    <div class=\"cv-education\">\n                        <h2>Education</h2>\n                        <p>").concat(degree, " from ").concat(schoolName, ", ").concat(schoolLocation, " (").concat(graduationYear, ")</p>\n                    </div>\n                    <div class=\"cv-experience\">\n                        <h2>Experience</h2>\n                        <p>").concat(jobTitle, " at ").concat(companyName, "</p>\n                        <p>").concat(jobDescription, "</p>\n                        <p>Years Worked: ").concat(yearsWorked, "</p>\n                    </div>\n                    <div class=\"cv-skills\">\n                        <h2>Skills</h2>\n                        <p>").concat(skills, "</p>\n                    </div>\n                </div>\n            </div>\n        ");
         cvOutput.classList.remove('hidden');
         downloadCvButton.classList.remove('hidden'); // Show the download button
     }
